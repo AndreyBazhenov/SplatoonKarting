@@ -79,7 +79,6 @@ public class ResultController : MonoBehaviour
 
         RenderTexture.active = renderTexture;
 
-        // Read pixels
         texture.ReadPixels(rectReadPicture, 0, 0);
         texture.Apply();
 
