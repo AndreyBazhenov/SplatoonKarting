@@ -9,7 +9,7 @@ public class ResultController : MonoBehaviour
 
     public List<float> percents = new List<float>();
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

@@ -41,6 +41,8 @@ namespace VehicleBehaviour.Utils {
 
 		void Start () {
 			rb = GetComponent<Rigidbody>();
+			Follow = true;
+			SetTargetIndex(0);
 		}
 
 		// Select target from targets list using it's index
