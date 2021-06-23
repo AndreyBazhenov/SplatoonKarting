@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class ResultController : MonoBehaviour
 {
     [SerializeField] RenderTexture renderTexture;
@@ -9,8 +11,21 @@ public class ResultController : MonoBehaviour
 
     public List<float> percents = new List<float>();
 
-    private void Update()
+    [SerializeField]
+    Shader shader;
+    [SerializeField]
+    Camera cam;
+
+
+	private void Start()
+	{
+        var unlitShader = Shader.Find("Unlit/Texture");
+        cam.SetReplacementShader(unlitShader, "");
+    }
+
+	private void Update()
     {
+        CheckResult(test);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             CheckResult(test);
@@ -24,6 +39,7 @@ public class ResultController : MonoBehaviour
 
     public void Test()
     {
+        /*
         Debug.LogError("PlayerColor  " + test[0]);
 
         Texture2D texture = GetArenaTexture();
@@ -33,7 +49,10 @@ public class ResultController : MonoBehaviour
         foreach (var pixel in pixels)
         {
             Debug.LogError("Other = " + pixel);
-        }
+        }*/
+        Debug.LogError("UnLitStandart");
+
+
     }
 
 	public List<float> CheckResult(List<Color> colors)

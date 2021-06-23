@@ -230,7 +230,8 @@ namespace VehicleBehaviour {
             speed = transform.InverseTransformDirection(_rb.velocity).z * 3.6f;
 
             // Get all the inputs!
-            if (isPlayer) {
+            if (isPlayer)
+            {
                 // Accelerate & brake
                 if (throttleInput != "" && throttleInput != null)
                 {
@@ -241,9 +242,26 @@ namespace VehicleBehaviour {
                 // Turn
                 steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
                 // Dirft
-                drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
+                drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
                 // Jump
                 jumping = GetInput(jumpInput) != 0;
+            }
+            else
+            {   
+                // Accelerate & brake
+                if (throttleInput != "" && throttleInput != null)
+                {
+                    throttle = 1;
+                }
+                handbrake = false;
+                // Boost
+                //boosting = (GetInput(boostInput) > 0.5f);
+                // Turn
+                steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
+                // Dirft
+                //drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
+                // Jump
+                //jumping = GetInput(jumpInput) != 0;
             }
 
             // Direction

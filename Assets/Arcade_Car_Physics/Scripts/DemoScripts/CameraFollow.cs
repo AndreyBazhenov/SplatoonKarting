@@ -107,10 +107,6 @@ namespace VehicleBehaviour.Utils {
 
 				speedometer.text = sb.ToString();
 			}
-			else if (speedometer.text != "")
-			{
-				speedometer.text = "";
-			}
 			
 		}
 	}
