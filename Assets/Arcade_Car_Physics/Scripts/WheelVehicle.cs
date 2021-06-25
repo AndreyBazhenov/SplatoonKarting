@@ -179,8 +179,19 @@ namespace VehicleBehaviour {
         Rigidbody _rb;
         WheelCollider[] wheels;
 
+        private GameObject[] waypoints;
+        private GameObject currentWaypoint;
+
+        private float respawnTimer;
+        [SerializeField]
+        private float amountRespawnTimer = 5f;
+
         // Init rigidbody, center of mass, wheels and more
-        void Start() {
+        void Start() 
+        {
+            waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+            currentWaypoint = waypoints[UnityEngine.Random.Range(0, waypoints.Length)];
+
 #if MULTIOSCONTROLS
             Debug.Log("[ACP] Using MultiOSControls");
 #endif
@@ -232,6 +243,15 @@ namespace VehicleBehaviour {
             // Get all the inputs!
             if (isPlayer)
             {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                    GetComponent<Rigidbody>().rotation = Quaternion.identity;
+                    GetComponent<Rigidbody>().position = new Vector3(0, 15, 0);
+                    
+                }
+
                 // Accelerate & brake
                 if (throttleInput != "" && throttleInput != null)
                 {
@@ -257,7 +277,34 @@ namespace VehicleBehaviour {
                 // Boost
                 //boosting = (GetInput(boostInput) > 0.5f);
                 // Turn
-                steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
+                float turnAmount = 0;
+
+                Vector3 delta = (currentWaypoint.transform.position - transform.position).normalized;
+                Vector3 cross = Vector3.Cross(delta, -transform.forward);
+
+                if (cross == Vector3.zero)
+                {
+                    turnAmount = 0;
+                }
+                else if (cross.y > 0)
+                {
+                    turnAmount = 1;
+                }
+                else
+                {
+                    turnAmount = -1;
+                }
+
+
+                steering = turnInputCurve.Evaluate(cross.y) * steerAngle;
+                Debug.LogError(currentWaypoint.name+" a "+ cross.y + "  D = " + Vector3.Distance(transform.position, currentWaypoint.transform.position));
+                Debug.DrawLine(currentWaypoint.transform.position, currentWaypoint.transform.position + new Vector3(0, 50f, 0), Color.red, 0.5f);
+
+                if (Vector3.Distance(transform.position, currentWaypoint.transform.position) < 5f)
+                {
+                    SelectNewWaypoint();
+                }
+
                 // Dirft
                 //drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
                 // Jump
@@ -368,6 +415,18 @@ namespace VehicleBehaviour {
         {
             handbrake = h;
         }
+
+        void SelectNewWaypoint()
+        {
+            GameObject selectedWaypoint;
+			do
+			{
+                selectedWaypoint = waypoints[UnityEngine.Random.Range(0, waypoints.Length)];
+			} while (currentWaypoint == selectedWaypoint);
+
+            currentWaypoint = selectedWaypoint;
+        }
+
 
         // MULTIOSCONTROLS is another package I'm working on ignore it I don't know if it will get a release.
 #if MULTIOSCONTROLS

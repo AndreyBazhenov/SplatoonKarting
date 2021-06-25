@@ -15,9 +15,13 @@ public class ResultController : MonoBehaviour
     Shader shader;
     [SerializeField]
     Camera cam;
+    [SerializeField]
+    Vector2 waypointCount;
+    [SerializeField]
+    GameObject waypointPrefab;
 
 
-	private void Start()
+    private void Start()
 	{
         var unlitShader = Shader.Find("Unlit/Texture");
         cam.SetReplacementShader(unlitShader, "");
@@ -39,20 +43,24 @@ public class ResultController : MonoBehaviour
 
     public void Test()
     {
-        /*
-        Debug.LogError("PlayerColor  " + test[0]);
+        Debug.LogError("Test  " + cam.pixelWidth+"x"+cam.pixelHeight);
 
-        Texture2D texture = GetArenaTexture();
+        Vector2 stepSize = new Vector2(cam.pixelWidth / waypointCount.x, cam.pixelHeight / waypointCount.y);
 
-        Color[] pixels = texture.GetPixels();
+		for (int x = 0; x < waypointCount.x; x++)
+		{
+			for (int y = 0; y < waypointCount.y; y++)
+			{
+                Vector3 scrPoint = new Vector3((stepSize.x/2 + stepSize.x* x), (stepSize.y / 2 + stepSize.y * y), 0);
+                Ray ray = cam.ScreenPointToRay(scrPoint);
+                RaycastHit hit;
 
-        foreach (var pixel in pixels)
-        {
-            Debug.LogError("Other = " + pixel);
-        }*/
-        Debug.LogError("UnLitStandart");
-
-
+                if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000))
+                {
+                    Instantiate(waypointPrefab, hit.point, Quaternion.identity);
+                }
+            }
+		}        
     }
 
 	public List<float> CheckResult(List<Color> colors)
