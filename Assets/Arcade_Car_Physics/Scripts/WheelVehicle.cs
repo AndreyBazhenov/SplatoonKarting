@@ -185,6 +185,10 @@ namespace VehicleBehaviour {
         private float respawnTimer;
         [SerializeField]
         private float amountRespawnTimer = 5f;
+        [SerializeField]
+        private Rigidbody selfRB;
+        [SerializeField]
+        private Rigidbody rollerRB;
 
         // Init rigidbody, center of mass, wheels and more
         void Start() 
@@ -234,7 +238,21 @@ namespace VehicleBehaviour {
                 if (boost > maxBoost) { boost = maxBoost; }
             }
         }
-        
+
+        public void Respawn()
+        {
+            Vector3 relativePosRoller = selfRB.position - rollerRB.position;
+            TeleportRigidbody(selfRB, waypoints[UnityEngine.Random.Range(0, waypoints.Length)].transform.position + new Vector3(0, 1, 0));
+            TeleportRigidbody(rollerRB, selfRB.position + relativePosRoller);
+        }
+
+        private void TeleportRigidbody(Rigidbody currentRB, Vector3 place)
+        {
+            currentRB.velocity = Vector3.zero;
+            currentRB.angularVelocity = Vector3.zero;
+            currentRB.position = place;
+        }
+
         // Update everything
         void FixedUpdate () {
             // Mesure current speed
@@ -243,28 +261,24 @@ namespace VehicleBehaviour {
             // Get all the inputs!
             if (isPlayer)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                    GetComponent<Rigidbody>().rotation = Quaternion.identity;
-                    GetComponent<Rigidbody>().position = new Vector3(0, 15, 0);
-                    
-                }
-
                 // Accelerate & brake
                 if (throttleInput != "" && throttleInput != null)
                 {
-                    throttle = GetInput(throttleInput) - GetInput(brakeInput);
+                    throttle = 1f;// GetInput(throttleInput) - GetInput(brakeInput);
                 }
                 // Boost
-                boosting = (GetInput(boostInput) > 0.5f);
+               // boosting = (GetInput(boostInput) > 0.5f);
                 // Turn
                 steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
                 // Dirft
-                drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
+                //drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
                 // Jump
                 jumping = GetInput(jumpInput) != 0;
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Respawn();
+                }
             }
             else
             {   
@@ -277,27 +291,41 @@ namespace VehicleBehaviour {
                 // Boost
                 //boosting = (GetInput(boostInput) > 0.5f);
                 // Turn
-                float turnAmount = 0;
 
                 Vector3 delta = (currentWaypoint.transform.position - transform.position).normalized;
                 Vector3 cross = Vector3.Cross(delta, -transform.forward);
 
-                if (cross == Vector3.zero)
+                RaycastHit objectHit;
+                Vector3 fwd = transform.TransformDirection(Vector3.forward);
+                Debug.DrawRay(transform.position + new Vector3(0, 1, 0), fwd * 15, Color.green);
+                if (Physics.Raycast(transform.position+new Vector3(0,1,0), fwd, out objectHit, 15))
                 {
-                    turnAmount = 0;
+                    //do something if hit object ie
+                    if (objectHit.collider.CompareTag("Environment"))
+                    {
+                        Debug.LogError("Wall " + speed);
+                        throttle = 0.1f;
+                        cross.y = Mathf.Clamp(cross.y * 1000, -10, 10);
+                    }
+                    else
+                    {
+                        Debug.LogError("Else "+ objectHit.collider.tag);
+                    }
                 }
-                else if (cross.y > 0)
+
+                if (speed < 5)
                 {
-                    turnAmount = 1;
-                }
-                else
-                {
-                    turnAmount = -1;
+                    respawnTimer += Time.deltaTime;
+                    if (respawnTimer > amountRespawnTimer)
+                    {
+                        respawnTimer = 0;
+                        Respawn();
+                    }
                 }
 
 
                 steering = turnInputCurve.Evaluate(cross.y) * steerAngle;
-                Debug.LogError(currentWaypoint.name+" a "+ cross.y + "  D = " + Vector3.Distance(transform.position, currentWaypoint.transform.position));
+                //Debug.LogError(currentWaypoint.name+" a "+ cross.y + "  D = " + Vector3.Distance(transform.position, currentWaypoint.transform.position));
                 Debug.DrawLine(currentWaypoint.transform.position, currentWaypoint.transform.position + new Vector3(0, 50f, 0), Color.red, 0.5f);
 
                 if (Vector3.Distance(transform.position, currentWaypoint.transform.position) < 5f)
@@ -438,7 +466,7 @@ namespace VehicleBehaviour {
 #if MULTIOSCONTROLS
         return MultiOSControls.GetValue(input, playerId);
 #else
-        return Input.GetAxis(input);
+        return Input.GetAxis(input) + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxis(input);
 #endif
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -7,9 +8,9 @@ using UnityEngine;
 public class ResultController : MonoBehaviour
 {
     [SerializeField] RenderTexture renderTexture;
-    public List<Color> test;
 
-    public List<float> percents = new List<float>();
+    [SerializeField]
+    public RaceData[] raceDatas;
 
     [SerializeField]
     Shader shader;
@@ -19,6 +20,8 @@ public class ResultController : MonoBehaviour
     Vector2 waypointCount;
     [SerializeField]
     GameObject waypointPrefab;
+    [SerializeField]
+    private UIResultPanel resultPanel;
 
 
     private void Start()
@@ -27,21 +30,35 @@ public class ResultController : MonoBehaviour
         cam.SetReplacementShader(unlitShader, "");
     }
 
-	private void Update()
+	private void FixedUpdate()
     {
-        CheckResult(test);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CheckResult(test);
-        }
+        CheckResult();
+        resultPanel.UpdateRaceInfo(raceDatas);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Test();
+            SpawnWayPoints();
         }
 	}
 
-    public void Test()
+    public int GetPlaceByColor(Color needColor)
+    {
+        int place = 0;
+
+        raceDatas = raceDatas.OrderByDescending(x => x.percent).ToArray();
+
+        for (int i = 0; i < raceDatas.Length; i++)
+		{
+            if (needColor == raceDatas[i].color)
+            {
+                place = i + 1;
+            }
+		}
+
+        return place;
+    }
+
+    public void SpawnWayPoints()
     {
         Debug.LogError("Test  " + cam.pixelWidth+"x"+cam.pixelHeight);
 
@@ -63,21 +80,20 @@ public class ResultController : MonoBehaviour
 		}        
     }
 
-	public List<float> CheckResult(List<Color> colors)
+	public void CheckResult()
     {
-        percents.Clear();
 
         Texture2D texture = GetArenaTexture();
 
         Color[] pixels = texture.GetPixels();
 
-        int[] counters = new int[colors.Count];
+        int[] counters = new int[raceDatas.Length];
 
 		foreach (var pixel in pixels)
 		{
-			for (int i = 0; i < colors.Count; i++)
+			for (int i = 0; i < raceDatas.Length; i++)
 			{
-                if (ColorEquals(pixel, colors[i], 0.001f))
+                if (ColorEquals(pixel, raceDatas[i].color, 0.001f))
                 {
                     counters[i]++;
                 }
@@ -92,10 +108,8 @@ public class ResultController : MonoBehaviour
 
         for (int i = 0; i < counters.Length; i++)
         {
-            percents.Add((float)counters[i] / (float)counter);
+            raceDatas[i].percent = ((float)counters[i] / (float)counter);
         }
-
-        return percents;
     }
 
     private Texture2D GetArenaTexture()
