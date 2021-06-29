@@ -9,6 +9,8 @@ TagManager:
   - Environment
   - Car
   - Gift
+  - Fire
+  - Target
   layers:
   - Default
   - TransparentFX

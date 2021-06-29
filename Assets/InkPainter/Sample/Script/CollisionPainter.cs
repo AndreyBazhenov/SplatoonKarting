@@ -36,5 +36,18 @@ namespace Es.InkPainter.Sample
 					canvas.Paint(brush, p.point);
 			}
 		}
+
+		public Color GetColor()
+		{
+			return brush.Color;
+		}
+		public float GetSize()
+		{
+			return brush.Scale;
+		}
+		public void SetSize(float newSize)
+		{
+			brush.Scale = newSize;
+		}
 	}
 }

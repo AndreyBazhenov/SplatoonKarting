@@ -303,13 +303,8 @@ namespace VehicleBehaviour {
                     //do something if hit object ie
                     if (objectHit.collider.CompareTag("Environment"))
                     {
-                        Debug.LogError("Wall " + speed);
                         throttle = 0.1f;
                         cross.y = Mathf.Clamp(cross.y * 1000, -10, 10);
-                    }
-                    else
-                    {
-                        Debug.LogError("Else "+ objectHit.collider.tag);
                     }
                 }
 

@@ -20,7 +20,7 @@ public class UIResultPanel : MonoBehaviour
     {
         raceDatas = raceDatas.OrderByDescending(x => x.percent).ToArray();
 
-        for (int i = 0; i < raceDatas.Length; i++)
+        for (int i = 0; i < (imgRacers.Length < raceDatas.Length? imgRacers.Length:raceDatas.Length); i++)
 		{
             imgRacers[i].color = raceDatas[i].color;
             imgRacers[i].fillAmount = raceDatas[i].percent;
