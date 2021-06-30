@@ -34,6 +34,7 @@ public class GiftController : MonoBehaviour
 	[SerializeField]
 	private int currentGift;
 
+	private IEnumerator coroutine;
 	private void Start()
 	{
 		startSize = roller.GetSize();
@@ -43,11 +44,19 @@ public class GiftController : MonoBehaviour
 		if (other.CompareTag("Gift"))
 		{
 			currentGift = other.GetComponent<Gift>().giftIndex;
+			Debug.LogError("CurGift  " + currentGift);
 			Destroy(other.gameObject);
 			CheckCurentGift();
 		}
 	}
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.DownArrow)&&vehicle.IsPlayer)
+		{
+			UseGift();
+		}
+	}
 
 	private void CheckCurentGift()
 	{
@@ -68,6 +77,8 @@ public class GiftController : MonoBehaviour
 
 	public void UseGift()
 	{
+		if (coroutine != null)
+			StopCoroutine(coroutine);
 		switch (currentGift)
 		{
 			case 0:
@@ -77,10 +88,12 @@ public class GiftController : MonoBehaviour
 				currentRocket.isActivated = true;
 				break;
 			case 2:
-				currentRocket.isActivated = true;
+				coroutine = StartUseBoost();
+				StartCoroutine(coroutine);
 				break;
 			case 3:
-				currentRocket.isActivated = true;
+				coroutine = StartUseRoller();
+				StartCoroutine(coroutine);
 				break;
 			default:				
 				break;
@@ -90,15 +103,18 @@ public class GiftController : MonoBehaviour
 
 	IEnumerator StartUseBoost()
 	{
+		roller.SetSize(startSize);
+		vehicle.boosting = true;
+		yield return new WaitForSeconds(needBoostTime);
 		vehicle.boosting = false;
-		roller.SetSize(startSize * needBigRollerSizeMul);
-		yield return new WaitForSeconds()
-
 	}
 
 	IEnumerator StartUseRoller()
 	{
 		vehicle.boosting = false;
-		
+		roller.SetSize(startSize * needBigRollerSizeMul);
+		yield return new WaitForSeconds(needBoostTime);
+
+		roller.SetSize(startSize);
 	}
 }
