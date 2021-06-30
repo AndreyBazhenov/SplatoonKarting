@@ -38,11 +38,10 @@ public class GameController : MonoBehaviour
     public bool canControll;
     public SaveController saveController;
     public float timer = 30f;
-    public GameObject camera1;
-    public GameObject camera2;
-    public int needReceptCount = 2;
+    public int needMinimalPlace = 2;
 
     public Color playerColor;
+    public ResultController resultController;
 
     public void StartGame()
     {
@@ -59,9 +58,9 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                canControll = false;
                 Invoke("Result", 0.5f);
             }
+
             uiController.SetTimerData(((int)timer).ToString());
         }
 	}
@@ -74,7 +73,8 @@ public class GameController : MonoBehaviour
 
     public void CheckResult()
     {
-        if (true)
+        canControll = false;
+        if (resultController.GetPlaceByColor(playerColor) <= needMinimalPlace)
         {
             uiController.Win();
         }

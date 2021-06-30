@@ -22,7 +22,8 @@ public class ResultController : MonoBehaviour
     GameObject waypointPrefab;
     [SerializeField]
     private UIResultPanel resultPanel;
-
+    private float timer;
+    private float needTime = 0.5f;
 
     private void Start()
 	{
@@ -32,8 +33,16 @@ public class ResultController : MonoBehaviour
 
 	private void FixedUpdate()
     {
-        CheckResult();
-        resultPanel.UpdateRaceInfo(raceDatas);
+        if (timer < needTime)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            CheckResult();
+            resultPanel.UpdateRaceInfo(raceDatas);
+            timer = 0;
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -54,7 +63,7 @@ public class ResultController : MonoBehaviour
                 place = i + 1;
             }
 		}
-
+        Debug.LogError("Place = " + place);
         return place;
     }
 

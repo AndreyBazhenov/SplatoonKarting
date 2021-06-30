@@ -11,10 +11,12 @@ public class Rocket : MonoBehaviour
     public bool isActivated;
 
     private Renderer renderer;
+    private Transform root;
 
     void Start()
     {
-        renderer = GetComponent<Renderer>(); ;
+        renderer = GetComponent<Renderer>(); 
+        root = transform.root;
     }
 
 	private void Update()
@@ -27,7 +29,7 @@ public class Rocket : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-        if (collision.transform.CompareTag("Car"))
+        if (collision.transform.CompareTag("Car")&& collision.transform.root != root)
         {
             Debug.LogError("1");
             collision.transform.GetComponent<Rigidbody>().AddExplosionForce(2500000, transform.position, 50f, 3.0F);

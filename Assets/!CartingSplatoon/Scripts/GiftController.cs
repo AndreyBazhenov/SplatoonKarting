@@ -34,10 +34,12 @@ public class GiftController : MonoBehaviour
 	[SerializeField]
 	private int currentGift;
 
+	private bool m_isAxisInUse;
 	private IEnumerator coroutine;
 	private void Start()
 	{
-		startSize = roller.GetSize();
+		if(roller)
+			startSize = roller.GetSize();
 	}
 	private void OnTriggerEnter(Collider other)
 	{
@@ -52,9 +54,18 @@ public class GiftController : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.DownArrow)&&vehicle.IsPlayer)
+		if ((Input.GetAxisRaw("Gift") + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Gift")) != 0)
 		{
-			UseGift();
+			if (m_isAxisInUse == false)
+			{
+				UseGift();
+				// Call your event function here.
+				m_isAxisInUse = true;
+			}
+		}
+		if ((Input.GetAxisRaw("Gift") + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Gift")) == 0)
+		{
+			m_isAxisInUse = false;
 		}
 	}
 

@@ -189,7 +189,7 @@ namespace VehicleBehaviour {
         private Rigidbody selfRB;
         [SerializeField]
         private Rigidbody rollerRB;
-
+        private bool m_isAxisInUse;
         // Init rigidbody, center of mass, wheels and more
         void Start() 
         {
@@ -237,6 +237,20 @@ namespace VehicleBehaviour {
                 boost += Time.deltaTime * boostRegen;
                 if (boost > maxBoost) { boost = maxBoost; }
             }
+
+            if ((Input.GetAxisRaw("Respawn") + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Respawn")) != 0)
+            {
+                if (m_isAxisInUse == false)
+                {
+                    Respawn();
+                    // Call your event function here.
+                    m_isAxisInUse = true;
+                }
+            }
+            if ((Input.GetAxisRaw("Respawn") + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Respawn")) == 0)
+            {
+                m_isAxisInUse = false;
+            }
         }
 
         public void Respawn()
@@ -255,6 +269,12 @@ namespace VehicleBehaviour {
 
         // Update everything
         void FixedUpdate () {
+
+            if (!GameController.Instance.canControll)
+            {
+                return;
+            }
+
             // Mesure current speed
             speed = transform.InverseTransformDirection(_rb.velocity).z * 3.6f;
 

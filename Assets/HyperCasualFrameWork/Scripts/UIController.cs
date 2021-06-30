@@ -14,22 +14,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
 
-    [SerializeField] private TextMeshProUGUI txtIngameLvlName;
+    //[SerializeField] private TextMeshProUGUI txtIngameLvlName;
     [SerializeField] private TextMeshProUGUI txtTimer;
-    [SerializeField] private TextMeshProUGUI txtReceipes;
 
 
-    [SerializeField] private GameObject receipePanelPrefab;
-    [SerializeField] private Transform receipePanelParent;
-
-    private void Start()
-	{
-        txtIngameLvlName.text = "Level " + (SceneManager.GetActiveScene().buildIndex + 1);
-	}
-    HorizontalLayoutGroup horizontalLayout;
-
-
-    private float timer = 2f;
 
     public void SetTimerData(string count)
     {
