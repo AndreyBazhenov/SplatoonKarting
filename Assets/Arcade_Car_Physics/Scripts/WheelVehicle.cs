@@ -258,6 +258,13 @@ namespace VehicleBehaviour {
             Vector3 relativePosRoller = selfRB.position - rollerRB.position;
             TeleportRigidbody(selfRB, waypoints[UnityEngine.Random.Range(0, waypoints.Length)].transform.position + new Vector3(0, 1, 0));
             TeleportRigidbody(rollerRB, selfRB.position + relativePosRoller);
+
+            Debug.LogError(transform.root.name + " ++ " + Vector3.Dot(transform.up, Vector3.down));
+
+            if (Vector3.Dot(transform.up, Vector3.down) > 0)
+            {
+                transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            }
         }
 
         private void TeleportRigidbody(Rigidbody currentRB, Vector3 place)

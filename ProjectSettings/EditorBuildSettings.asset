@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/!CartingSplatoon/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 1.unity
+    guid: a644104dcd1bcef4ebaa4f523b6eb6ea
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 2.unity
+    guid: 9c6e16ada29bd9a4e8956eee2b8a87e1
   m_configObjects: {}

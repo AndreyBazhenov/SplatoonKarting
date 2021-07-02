@@ -4984,11 +4984,7 @@ MonoBehaviour:
   pausePanel: {fileID: 7023856434039568130}
   winPanel: {fileID: 1238660752620570474}
   losePanel: {fileID: 43591443415964093}
-  txtIngameLvlName: {fileID: 8603037074767021623}
   txtTimer: {fileID: 1464471674}
-  txtReceipes: {fileID: 0}
-  receipePanelPrefab: {fileID: 80823031571320706, guid: c26bccec6538cda4e80902a27cb06230, type: 3}
-  receipePanelParent: {fileID: 0}
 --- !u!1 &8068928844558004093
 GameObject:
   m_ObjectHideFlags: 0

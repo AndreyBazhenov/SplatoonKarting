@@ -54,7 +54,8 @@ public class GiftController : MonoBehaviour
 
 	private void Update()
 	{
-		if ((Input.GetAxisRaw("Gift") + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Gift")) != 0)
+		Debug.LogError("QQ  " + m_isAxisInUse+" v "+ (UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Gift")));
+		if ((Input.GetAxisRaw("Gift") + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Gift")) > 0.1)
 		{
 			if (m_isAxisInUse == false)
 			{
@@ -63,7 +64,7 @@ public class GiftController : MonoBehaviour
 				m_isAxisInUse = true;
 			}
 		}
-		if ((Input.GetAxisRaw("Gift") + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Gift")) == 0)
+		else
 		{
 			m_isAxisInUse = false;
 		}

@@ -13,6 +13,8 @@ public class Rocket : MonoBehaviour
     private Renderer renderer;
     private Transform root;
 
+    public GameObject explosionPrefab;
+
     void Start()
     {
         renderer = GetComponent<Renderer>(); 
@@ -90,4 +92,9 @@ public class Rocket : MonoBehaviour
         if(target && hasChanged)
             renderer.material.SetColor("_Color", target.root.GetComponentInChildren<Es.InkPainter.Sample.CollisionPainter>().GetColor());
     }
+
+	private void OnDestroy()
+	{
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+	}
 }
