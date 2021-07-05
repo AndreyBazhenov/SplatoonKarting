@@ -31,11 +31,13 @@ public class Rocket : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-        if (collision.transform.CompareTag("Car")&& collision.transform.root != root)
+        if (isActivated)
         {
-            Debug.LogError("1");
-            collision.transform.GetComponent<Rigidbody>().AddExplosionForce(2500000, transform.position, 50f, 3.0F);
-            Destroy(gameObject);
+            if (collision.transform.CompareTag("Car") && collision.transform.root != root)
+            {
+                collision.transform.GetComponent<Rigidbody>().AddExplosionForce(2500000, transform.position, 50f, 3.0F);
+                Destroy(gameObject);
+            }
         }
 	}
 
@@ -90,7 +92,7 @@ public class Rocket : MonoBehaviour
 		}
 
         if(target && hasChanged)
-            renderer.material.SetColor("_Color", target.root.GetComponentInChildren<Es.InkPainter.Sample.CollisionPainter>().GetColor());
+            renderer.material.SetColor("_Color", target.root.GetComponentInChildren< PaintIn3D.P3dPaintSphere>().Color);
     }
 
 	private void OnDestroy()

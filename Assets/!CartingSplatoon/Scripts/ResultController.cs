@@ -23,7 +23,9 @@ public class ResultController : MonoBehaviour
     [SerializeField]
     private UIResultPanel resultPanel;
     private float timer;
-    private float needTime = 0.5f;
+    private float needTime = 0.1f;
+
+    public List<PaintIn3D.Examples.P3dColorCounter> counters;
 
     private void Start()
 	{
@@ -91,7 +93,21 @@ public class ResultController : MonoBehaviour
 
 	public void CheckResult()
     {
+        float total = 0;
+        for (int i = 0; i < raceDatas.Length; i++)
+        {
 
+            total += PaintIn3D.Examples.P3dColorCounter.GetCount(raceDatas[i].colorPainter);
+        }
+
+
+        for (int i = 0; i < raceDatas.Length; i++)
+		{
+           
+            raceDatas[i].percent = PaintIn3D.Examples.P3dColorCounter.GetCount(raceDatas[i].colorPainter)/total;
+        }
+
+        /*
         Texture2D texture = GetArenaTexture();
 
         Color[] pixels = texture.GetPixels();
@@ -102,7 +118,7 @@ public class ResultController : MonoBehaviour
 		{
 			for (int i = 0; i < raceDatas.Length; i++)
 			{
-                if (ColorEquals(pixel, raceDatas[i].color, 0.001f))
+                if (ColorEquals(pixel, raceDatas[i].color, 0.1f))
                 {
                     counters[i]++;
                 }
@@ -119,6 +135,7 @@ public class ResultController : MonoBehaviour
         {
             raceDatas[i].percent = ((float)counters[i] / (float)counter);
         }
+        */
     }
 
     private Texture2D GetArenaTexture()

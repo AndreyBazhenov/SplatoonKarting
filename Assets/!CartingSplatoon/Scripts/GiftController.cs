@@ -21,7 +21,7 @@ public class GiftController : MonoBehaviour
 
 	[Header("RollerData")]
 	[SerializeField]
-	private Es.InkPainter.Sample.CollisionPainter roller;
+	private PaintIn3D.P3dPaintSphere roller;
 	[SerializeField]
 	private float needBigRollerTime = 5f;
 	[SerializeField]
@@ -39,10 +39,12 @@ public class GiftController : MonoBehaviour
 	private void Start()
 	{
 		if(roller)
-			startSize = roller.GetSize();
+			startSize = roller.Radius;
 	}
 	private void OnTriggerEnter(Collider other)
 	{
+		if (!vehicle.IsPlayer)
+			return;
 		if (other.CompareTag("Gift"))
 		{
 			currentGift = other.GetComponent<Gift>().giftIndex;
@@ -54,19 +56,26 @@ public class GiftController : MonoBehaviour
 
 	private void Update()
 	{
-		Debug.LogError("QQ  " + m_isAxisInUse+" v "+ (UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Gift")));
-		if ((Input.GetAxisRaw("Gift") + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Gift")) > 0.1)
+		if (vehicle.IsPlayer)
 		{
-			if (m_isAxisInUse == false)
+			if ((Input.GetAxisRaw("Gift") + UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxisRaw("Gift")) > 0.1)
 			{
-				UseGift();
-				// Call your event function here.
-				m_isAxisInUse = true;
+				if (m_isAxisInUse == false)
+				{
+					UseGift();
+					// Call your event function here.
+					m_isAxisInUse = true;
+				}
 			}
-		}
-		else
-		{
-			m_isAxisInUse = false;
+			else
+			{
+				m_isAxisInUse = false;
+			}
+
+			if (Input.GetKeyDown(KeyCode.UpArrow))
+			{
+				roller.Radius = 1;
+			}
 		}
 	}
 
@@ -86,6 +95,7 @@ public class GiftController : MonoBehaviour
 				break;
 		}
 	}
+	
 
 	public void UseGift()
 	{
@@ -115,7 +125,7 @@ public class GiftController : MonoBehaviour
 
 	IEnumerator StartUseBoost()
 	{
-		roller.SetSize(startSize);
+		roller.Radius = startSize;
 		vehicle.boosting = true;
 		yield return new WaitForSeconds(needBoostTime);
 		vehicle.boosting = false;
@@ -124,9 +134,9 @@ public class GiftController : MonoBehaviour
 	IEnumerator StartUseRoller()
 	{
 		vehicle.boosting = false;
-		roller.SetSize(startSize * needBigRollerSizeMul);
+		roller.Radius = startSize * needBigRollerSizeMul;
 		yield return new WaitForSeconds(needBoostTime);
 
-		roller.SetSize(startSize);
+		roller.Radius = startSize;
 	}
 }

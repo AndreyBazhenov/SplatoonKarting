@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public struct RaceData
 {
     public Color color;
+    public PaintIn3D.Examples.P3dColor colorPainter;
     public float percent;
 }
 

@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/!CartingSplatoon/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 0.unity
+    guid: e509a236cc7f2c14fa693472bb30a2a1
   - enabled: 1
     path: Assets/!CartingSplatoon/Scenes/SampleScene 1.unity
     guid: a644104dcd1bcef4ebaa4f523b6eb6ea
