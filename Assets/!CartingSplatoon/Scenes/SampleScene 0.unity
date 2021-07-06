@@ -1840,6 +1840,10 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[1].z
       value: -2.3000002
       objectReference: {fileID: 0}
+    - target: {fileID: 1183372098266795998, guid: cede268046f5aff409b91e057bab8721, type: 3}
+      propertyPath: paintIn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: hardness
       value: 1
@@ -1980,6 +1984,10 @@ PrefabInstance:
     - target: {fileID: 1183372097264549662, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_Positions.Array.data[1].z
       value: -0.60000014
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183372098266795998, guid: cede268046f5aff409b91e057bab8721, type: 3}
+      propertyPath: paintIn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: color.r
@@ -7869,6 +7877,10 @@ PrefabInstance:
       propertyPath: hitLimit
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1183372098266795998, guid: cede268046f5aff409b91e057bab8721, type: 3}
+      propertyPath: paintIn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: color.g
       value: 1
@@ -13376,7 +13388,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 1575473603}
-  cooldown: -62.4237
+  cooldown: -66.827934
   currentReader:
     requested: 0
     buffer: {fileID: 0}
@@ -17499,6 +17511,10 @@ PrefabInstance:
     - target: {fileID: 1183372097264549662, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_Positions.Array.data[1].x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183372098266795998, guid: cede268046f5aff409b91e057bab8721, type: 3}
+      propertyPath: paintIn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: color.r
