@@ -29,11 +29,31 @@ public class ResultController : MonoBehaviour
 
     private void Start()
 	{
+        Shuffle();
+
         var unlitShader = Shader.Find("Unlit/Texture");
         cam.SetReplacementShader(unlitShader, "");
+
+        VehicleBehaviour.WheelVehicle[] cars = FindObjectsOfType<VehicleBehaviour.WheelVehicle>();
+
+		for (int i = 0; i < cars.Length; i++)
+		{
+            cars[i].SetColor(raceDatas[i].mesh ,raceDatas[i].colorPainter.Color);
+        }
     }
 
-	private void FixedUpdate()
+    public void Shuffle()
+    {
+        for (int i = 0; i < raceDatas.Length; i++)
+        {
+            int rnd = Random.Range(0, raceDatas.Length);
+            var tempGO = raceDatas[rnd];
+            raceDatas[rnd] = raceDatas[i];
+            raceDatas[i] = tempGO;
+        }
+    }
+
+    private void FixedUpdate()
     {
         if (timer < needTime)
         {

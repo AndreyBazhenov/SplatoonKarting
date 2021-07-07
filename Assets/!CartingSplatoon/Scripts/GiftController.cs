@@ -62,7 +62,8 @@ public class GiftController : MonoBehaviour
 			{
 				if (m_isAxisInUse == false)
 				{
-					UseGift();
+					if(currentGift != 0)
+						UseGift();
 					// Call your event function here.
 					m_isAxisInUse = true;
 				}
@@ -81,17 +82,25 @@ public class GiftController : MonoBehaviour
 
 	private void CheckCurentGift()
 	{
+		if (currentRocket)
+		{
+			Destroy(currentRocket.gameObject);
+			currentRocket = null;
+		}
 		switch (currentGift)
 		{
 			case 1:
 				currentRocket = Instantiate(rocketPrefab, rocketParent.position, rocketParent.rotation, rocketParent).GetComponent<Rocket>();
+				GameController.Instance.uiController.ShowGift(true, "Rocket");
 				break;
+			case 2:
+				GameController.Instance.uiController.ShowGift(true, "Boost");
+				break;
+			case 3:
+				GameController.Instance.uiController.ShowGift(true, "BrushSize");
+				break;
+
 			default:
-				if (currentRocket)
-				{
-					Destroy(currentRocket.gameObject);
-					currentRocket = null;
-				}
 				break;
 		}
 	}
@@ -120,6 +129,10 @@ public class GiftController : MonoBehaviour
 			default:				
 				break;
 		}
+
+
+		GameController.Instance.uiController.ShowGift(false, "");
+
 		currentGift = 0;
 	}
 

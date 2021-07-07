@@ -16,8 +16,38 @@ public class UIController : MonoBehaviour
 
     //[SerializeField] private TextMeshProUGUI txtIngameLvlName;
     [SerializeField] private TextMeshProUGUI txtTimer;
+    [SerializeField] private Image imgGift;
+    [SerializeField] private Sprite rocketSprite;
+    [SerializeField] private Sprite boostSprite;
+    [SerializeField] private Sprite paintSprite;
 
+    public void ShowGift(bool show, string giftName)
+    {
+        if (show)
+        {
+            imgGift.gameObject.SetActive(true);
 
+            switch (giftName)
+            {
+                case "Rocket":
+                    imgGift.sprite = rocketSprite;
+                    break;
+                case "Boost":
+                    imgGift.sprite = boostSprite;
+                    break;
+                case "BrushSize":
+                    imgGift.sprite = paintSprite;
+                    break;
+                default:
+                    Debug.LogError("Wrong gift name");
+                    break;
+            }
+        }
+        else
+        {
+            imgGift.gameObject.SetActive(false);
+        }
+	}
 
     public void SetTimerData(string count)
     {

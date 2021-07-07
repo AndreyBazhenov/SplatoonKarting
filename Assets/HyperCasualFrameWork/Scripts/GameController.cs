@@ -74,6 +74,17 @@ public class GameController : MonoBehaviour
     public void CheckResult()
     {
         canControll = false;
+
+        VehicleBehaviour.WheelVehicle[] vehicles = FindObjectsOfType<VehicleBehaviour.WheelVehicle>();
+
+		foreach (var vehicle in vehicles)
+		{
+            if (vehicle.IsPlayer)
+            {
+                playerColor = vehicle.GetBrushColor();
+            }
+		}
+
         if (resultController.GetPlaceByColor(playerColor) <= needMinimalPlace)
         {
             uiController.Win();

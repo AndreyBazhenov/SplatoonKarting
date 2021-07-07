@@ -95,6 +95,8 @@ namespace PaintIn3D
 		[System.NonSerialized]
 		private float current;
 
+		public GameObject effect;
+
 		/// <summary>This method will immediately submit a non-preview hit. This can be used to apply real paint to your objects.</summary>
 		[ContextMenu("Manually Hit Now")]
 		public void ManuallyHitNow()
@@ -153,6 +155,8 @@ namespace PaintIn3D
 					var finalNormal   = normal == NormalType.HitNormal ? hit.normal : -ray.direction;
 					var finalRotation = Quaternion.LookRotation(-finalNormal, finalUp);
 
+					if (!effect.activeSelf)
+						effect.SetActive(true);
 					switch (draw)
 					{
 						case DrawType.PointsIn3D:
@@ -178,6 +182,10 @@ namespace PaintIn3D
 				}
 				else
 				{
+
+					if (effect.activeSelf)
+						effect.SetActive(false);
+
 					BreakHits(this);
 
 					fraction = 1.0f;
@@ -278,7 +286,7 @@ namespace PaintIn3D
 
 			Draw("point", "If you want to display something at the hit point (e.g. particles), you can specify the Transform here.");
 			Draw("line", "If you want to draw a line between the start point and the his point then you can set the line here");
-
+			Draw("effect", "If you want to draw a line between the start point and the his point then you can set the line here");
 			Separator();
 
 			var point    = Target.Draw == P3dHitBetween.DrawType.PointsIn3D;

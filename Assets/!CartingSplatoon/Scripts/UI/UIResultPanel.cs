@@ -9,12 +9,15 @@ public struct RaceData
 {
     public Color color;
     public PaintIn3D.Examples.P3dColor colorPainter;
+    public Mesh mesh;
     public float percent;
 }
 
 public class UIResultPanel : MonoBehaviour
 {
+    public Image[] imgBGRacers;
     public Image[] imgRacers;
+    public Image[] imgFGRacers;
 
 
     public void UpdateRaceInfo(RaceData[] raceDatas)
@@ -25,6 +28,9 @@ public class UIResultPanel : MonoBehaviour
 		{
             imgRacers[i].color = raceDatas[i].color;
             imgRacers[i].fillAmount = raceDatas[i].percent;
+            imgFGRacers[i].fillAmount = raceDatas[i].percent;
+            imgBGRacers[i].fillAmount = raceDatas[i].percent;
+
         }
     }
 }

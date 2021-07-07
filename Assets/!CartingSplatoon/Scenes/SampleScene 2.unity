@@ -645,11 +645,6 @@ Transform:
   m_Father: {fileID: 1951909199}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &58632258 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 58632258, guid: cede268046f5aff409b91e057bab8721, type: 3}
-  m_PrefabInstance: {fileID: 79663537054037677}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &70158222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1831,38 +1826,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1290802078, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 79063110516329069, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505169, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 57b8868b2d9eb5c4096bcab4e35db9fc, type: 2}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: wait
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: c504fdd8bbd578840a460fb75b1e4606, type: 3}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 79663537306363832, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.7
@@ -1911,18 +1874,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarEnemyExample
       objectReference: {fileID: 0}
-    - target: {fileID: 79663537306363833, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537747177128, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: be1f5d0e473986f47878784a88679b53, type: 3}
-    - target: {fileID: 79663538167522676, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: be1f5d0e473986f47878784a88679b53, type: 3}
     - target: {fileID: 1183372097264549662, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_Positions.Array.data[0].x
       value: -17.7
@@ -1939,30 +1890,6 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[1].z
       value: 27.9
       objectReference: {fileID: 0}
-    - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: hardness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372098298035460, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.00000047683716
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372098298035460, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3330014
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114843489105481334, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_TagString
-      value: Car
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114843489105481334, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Name
-      value: EnemyCar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114843489105481334, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cede268046f5aff409b91e057bab8721, type: 3}
 --- !u!1001 &170414211
@@ -1972,38 +1899,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1290802078, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505169, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 57b8868b2d9eb5c4096bcab4e35db9fc, type: 2}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: wait
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: c504fdd8bbd578840a460fb75b1e4606, type: 3}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 79663537306363832, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.7
@@ -2052,18 +1947,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarEnemyExample (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 79663537306363833, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537747177128, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 5ddd8569ead41b34bb56933a2b2816fd, type: 3}
-    - target: {fileID: 79663538167522676, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 5ddd8569ead41b34bb56933a2b2816fd, type: 3}
     - target: {fileID: 1183372097264549662, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_Positions.Array.data[0].x
       value: 22.7
@@ -2080,38 +1963,6 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[1].z
       value: 26.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: hardness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372098298035460, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.00000047683716
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372098298035460, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3330014
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114843489105481334, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_TagString
-      value: Car
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114843489105481334, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Name
-      value: EnemyCar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114843489105481334, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cede268046f5aff409b91e057bab8721, type: 3}
 --- !u!1001 &170601938
@@ -7226,17 +7077,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4537a091fc7555a4eafd820b3331eedb, type: 3}
---- !u!114 &732666095 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8146949094894932646, guid: cede268046f5aff409b91e057bab8721, type: 3}
-  m_PrefabInstance: {fileID: 79663537054037677}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c241727a8fc83048b56bdd0b450f8fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &739876084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8359,34 +8199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1290802078, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505169, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 57b8868b2d9eb5c4096bcab4e35db9fc, type: 2}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: wait
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: c504fdd8bbd578840a460fb75b1e4606, type: 3}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 79663537306363832, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7
@@ -8435,18 +8247,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarEnemyExample (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 79663537306363833, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537747177128, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 01f6cc3143c1e9a43a0ddb8636da8e61, type: 3}
-    - target: {fileID: 79663538167522676, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 01f6cc3143c1e9a43a0ddb8636da8e61, type: 3}
     - target: {fileID: 1183372097264549662, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_Positions.Array.data[0].x
       value: 0.7
@@ -8463,34 +8263,10 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[1].z
       value: -46.800003
       objectReference: {fileID: 0}
-    - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: hardness
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1183372098298035460, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.0000011920929
       objectReference: {fileID: 0}
-    - target: {fileID: 1183372098298035460, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3330014
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114843489105481334, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_TagString
-      value: Car
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114843489105481334, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Name
-      value: EnemyCar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114843489105481334, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cede268046f5aff409b91e057bab8721, type: 3}
 --- !u!1 &925578213
@@ -12903,17 +12679,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4537a091fc7555a4eafd820b3331eedb, type: 3}
---- !u!114 &1436068429 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-  m_PrefabInstance: {fileID: 79663537054037677}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724ff6f732015ec4e8fecdb3d889fb82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!850595691 &1443835079
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -17465,7 +17230,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 2023649820}
-  cooldown: -32.221436
+  cooldown: -32.574768
   currentReader:
     requested: 0
     buffer: {fileID: 0}
@@ -18521,54 +18286,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 577216701, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: speed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 732666097, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: rocketParent
-      value: 
-      objectReference: {fileID: 58632258}
-    - target: {fileID: 732666097, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: rocketPrefab
-      value: 
-      objectReference: {fileID: 659318505205218596, guid: d4c4608ec34c85541b848f572bfb79b5, type: 3}
-    - target: {fileID: 732666097, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: roller
-      value: 
-      objectReference: {fileID: 1436068429}
-    - target: {fileID: 732666097, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: vehicle
-      value: 
-      objectReference: {fileID: 732666095}
-    - target: {fileID: 732666097, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: needBigRollerTime
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1290802078, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 79063110516329069, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Name
-      value: Rocket
-      objectReference: {fileID: 0}
-    - target: {fileID: 79063110516329069, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: wait
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: brush.brushTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: c504fdd8bbd578840a460fb75b1e4606, type: 3}
-    - target: {fileID: 79663537291505170, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 79663537306363832, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.47
@@ -18622,32 +18339,20 @@ PrefabInstance:
       value: -19.47
       objectReference: {fileID: 0}
     - target: {fileID: 1183372097264549662, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_Positions.Array.data[1].x
-      value: -19.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372097264549662, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_Positions.Array.data[0].z
       value: -2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183372097264549662, guid: cede268046f5aff409b91e057bab8721, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: -19.47
       objectReference: {fileID: 0}
     - target: {fileID: 1183372097264549662, guid: cede268046f5aff409b91e057bab8721, type: 3}
       propertyPath: m_Positions.Array.data[1].z
       value: -2.4
       objectReference: {fileID: 0}
-    - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183372098266795999, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: hardness
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1183372098298035460, guid: cede268046f5aff409b91e057bab8721, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3330014
+      propertyPath: m_LocalPosition.z
+      value: 0.00000011920929
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cede268046f5aff409b91e057bab8721, type: 3}

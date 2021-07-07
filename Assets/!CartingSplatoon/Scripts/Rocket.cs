@@ -14,20 +14,17 @@ public class Rocket : MonoBehaviour
     private Transform root;
 
     public GameObject explosionPrefab;
+    private CapsuleCollider collider;
 
     void Start()
     {
         renderer = GetComponent<Renderer>(); 
         root = transform.root;
+
+        collider = GetComponent<CapsuleCollider>();
+        collider.enabled = false;
     }
 
-	private void Update()
-	{
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            isActivated = true;
-        }
-	}
 
 	private void OnCollisionEnter(Collision collision)
 	{
@@ -48,6 +45,10 @@ public class Rocket : MonoBehaviour
         {
             if (transform.parent != null)
                 transform.parent = null;
+
+            if (!collider.enabled)
+                collider.enabled = true;
+
             transform.LookAt(target);
             transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
         }

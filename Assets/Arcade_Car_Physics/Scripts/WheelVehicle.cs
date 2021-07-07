@@ -189,8 +189,41 @@ namespace VehicleBehaviour {
         private Rigidbody selfRB;
         [SerializeField]
         private GameObject brush;
+        [SerializeField]
+        private PaintIn3D.P3dPaintSphere brushPaint;
+
+        [SerializeField]
+        private GameObject body;
+        [SerializeField]
+        private ParticleSystem paintEffect;
+
         private bool m_isAxisInUse;
         // Init rigidbody, center of mass, wheels and more
+
+        public Color GetBrushColor()
+        {
+            return brushPaint.Color;
+        }
+
+        public void SetColor(Mesh mesh, Color color)
+        {
+            body.GetComponent<MeshFilter>().mesh = mesh;
+            body.GetComponent<MeshCollider>().sharedMesh = mesh;
+
+            brushPaint.Color = color;
+            ChangeParticleColor(paintEffect, color);
+            foreach (Transform child in paintEffect.transform)
+            {
+                ChangeParticleColor(child.gameObject.GetComponent<ParticleSystem>(), color);
+            }
+        }
+
+        private void ChangeParticleColor(ParticleSystem pSystem,Color color)
+        {
+            ParticleSystem.MainModule settings = pSystem.GetComponent<ParticleSystem>().main;
+            settings.startColor = new ParticleSystem.MinMaxGradient(color);
+        }
+
         void Start() 
         {
             waypoints = GameObject.FindGameObjectsWithTag("Waypoint");

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 namespace UnityStandardAssets.CrossPlatformInput
@@ -25,6 +26,10 @@ namespace UnityStandardAssets.CrossPlatformInput
 		CrossPlatformInputManager.VirtualAxis m_HorizontalVirtualAxis; // Reference to the joystick in the cross platform input
 		CrossPlatformInputManager.VirtualAxis m_VerticalVirtualAxis; // Reference to the joystick in the cross platform input
 
+		public Image imgParent;
+		public float angle = 180;
+		private Image img;
+
 		void OnEnable()
 		{
 			CreateVirtualAxes();
@@ -32,7 +37,10 @@ namespace UnityStandardAssets.CrossPlatformInput
 
         void Start()
         {
+			img = GetComponent<Image>();
             m_StartPos = transform.position;
+
+			MovementRange = (int)((imgParent.rectTransform.rect.width*0.85f)/2);
         }
 
 		void UpdateVirtualAxes(Vector3 value)
@@ -49,6 +57,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 			{
 				m_VerticalVirtualAxis.Update(delta.y);
 			}
+
+			img.rectTransform.eulerAngles = new Vector3(0, 0, angle * delta.x);
 		}
 
 		void CreateVirtualAxes()
