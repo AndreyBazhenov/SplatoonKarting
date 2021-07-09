@@ -3122,6 +3122,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a66eb26c8da649f4d9002b04819036f0, type: 3}
+--- !u!114 &331265387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9038853818119012100, guid: a66eb26c8da649f4d9002b04819036f0, type: 3}
+  m_PrefabInstance: {fileID: 331265386}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22e033bf48e62b419a490305410698c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &333642388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8938,7 +8949,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1097397039
 PrefabInstance:
@@ -11178,7 +11189,7 @@ Transform:
   m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 185
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1362273173
 PrefabInstance:
@@ -16150,7 +16161,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 2023649820}
-  cooldown: -52.32529
+  cooldown: -52.47278
   currentReader:
     requested: 0
     buffer: {fileID: 0}
@@ -17311,8 +17322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 520147681}
   canControll: 0
-  saveController: {fileID: 0}
-  timer: 45
+  saveController: {fileID: 331265387}
+  timer: 60
   needMinimalPlace: 2
   playerColor: {r: 0, g: 1, b: 0, a: 1}
   resultController: {fileID: 819881588}

@@ -32,12 +32,12 @@ public class Rocket : MonoBehaviour
         {
             if (collision.transform.CompareTag("Car") && collision.transform.root != root)
             {
+                AudioController.Instance.PlaySFX("Explosion", transform.position);
                 collision.transform.GetComponent<Rigidbody>().AddExplosionForce(2500000, transform.position, 50f, 3.0F);
                 Destroy(gameObject);
             }
         }
 	}
-
 	// Update is called once per frame
 	void FixedUpdate()
     {

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 417960}
   - component: {fileID: 3348398}
   - component: {fileID: 2391112}
+  - component: {fileID: -2628613601855512332}
   m_Layer: 0
   m_Name: SM_Prop_Ammo_Box_03
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-2628613601855512332
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: b7d133ee096b1494fa25228d9c9408e0, type: 3}

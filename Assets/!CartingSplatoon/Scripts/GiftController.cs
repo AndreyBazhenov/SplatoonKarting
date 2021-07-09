@@ -47,6 +47,7 @@ public class GiftController : MonoBehaviour
 			return;
 		if (other.CompareTag("Gift"))
 		{
+			AudioController.Instance.PlaySFX("PickUp", transform.position);
 			currentGift = other.GetComponent<Gift>().giftIndex;
 			Debug.LogError("CurGift  " + currentGift);
 			Destroy(other.gameObject);
@@ -118,6 +119,7 @@ public class GiftController : MonoBehaviour
 			case 1:
 				roller.Radius = startSize;
 				vehicle.boosting = false;
+				AudioController.Instance.PlaySFX("RocketFly",transform.position);
 				currentRocket.isActivated = true;
 				break;
 			case 2:
@@ -142,6 +144,7 @@ public class GiftController : MonoBehaviour
 	{
 		roller.Radius = startSize;
 		vehicle.boosting = true;
+		AudioController.Instance.PlaySFX("Boost", transform.position);
 		yield return new WaitForSeconds(needBoostTime);
 		vehicle.boosting = false;
 	}
@@ -150,6 +153,7 @@ public class GiftController : MonoBehaviour
 	{
 		vehicle.boosting = false;
 		roller.Radius = startSize * needBigRollerSizeMul;
+		AudioController.Instance.PlaySFX("Paint", transform.position);
 		yield return new WaitForSeconds(needBoostTime);
 
 		roller.Radius = startSize;

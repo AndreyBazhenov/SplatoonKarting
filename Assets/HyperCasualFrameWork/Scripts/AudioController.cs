@@ -11,6 +11,31 @@ public struct sfxData
 
 public class AudioController : MonoBehaviour
 {
+    static AudioController instance;
+
+    public static AudioController Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                GameObject go = new GameObject();
+                instance = go.AddComponent<AudioController>();
+            }
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+
+
     [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private AudioClip[] bgClips;
@@ -48,4 +73,15 @@ public class AudioController : MonoBehaviour
             }
 		}
 	}
+    public void PlaySFX(string name, Vector3 pos)
+    {
+        foreach (var soundEffect in sfxDatas)
+        {
+            if (soundEffect.name == name)
+            {
+                //AudioSource.PlayClipAtPoint(soundEffect.clip, pos,10f);
+                audioSource.PlayOneShot(soundEffect.clip, 0.5f);
+            }
+        }
+    }
 }

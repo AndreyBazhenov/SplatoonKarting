@@ -14,4 +14,85 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/!CartingSplatoon/Scenes/SampleScene 2.unity
     guid: 9c6e16ada29bd9a4e8956eee2b8a87e1
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 3.unity
+    guid: ce4afa49668fc3f4b891926113bcc3bb
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 4.unity
+    guid: 5778ff4756682a545a40e5e3f5aaa197
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 5.unity
+    guid: 7f91c910d1b386d4ba72b85a2c283e59
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 6.unity
+    guid: 3177ba1310fb9a8498c4a410212561ad
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 7.unity
+    guid: 3490ad7b226ed1a468e8983e96f6e906
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 8.unity
+    guid: 197d9848224ce8a40a739be5726cb3ea
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 9.unity
+    guid: 730a1b414048fcd4ab527d926cf3ab2d
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 10.unity
+    guid: eaeb0fbb3ef6c9241ac435c69038b1c8
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 11.unity
+    guid: 6eda1b81800d3ab4cafce7ca7eaeff16
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 12.unity
+    guid: 9615021d0bc4bb44eb5cb7cd0dee1bff
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 13.unity
+    guid: a2ffcdf1a1375624481062bce90f7543
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 14.unity
+    guid: e78bb1415abed7945b80222db6e7f469
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 15.unity
+    guid: 5a89825a23940694688da10dcc7d0b10
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 16.unity
+    guid: 13d59c727c889164dba464b3dd317c1a
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 17.unity
+    guid: e14c17db3e0b4a84aa00258477d3455c
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 18.unity
+    guid: 4ba8d1fdd0e2ec248a4b613b084ed0d5
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 19.unity
+    guid: 85f597f6d8f344e4487db32bca685de6
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 20.unity
+    guid: 8c12d85a9330ae34b8b6660564db748d
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 21.unity
+    guid: c170da2b5a3c48e47b2f6bc358e4c7f6
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 22.unity
+    guid: 895161bf47c439b40a0447f6335e23f1
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 23.unity
+    guid: 40e2fa3387bccac45afdac616dd5435c
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 24.unity
+    guid: f8037fa371e26c249a948da2d2557fce
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 25.unity
+    guid: 2079f0e74e272654e8c5c32f3068be53
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 26.unity
+    guid: 7a844d00bcbad9e49abe1dcc75b305e4
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 27.unity
+    guid: 47c3e20366946074895ee408b54a5106
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 28.unity
+    guid: 9f7091c8060b27643b65ed85bee784c8
+  - enabled: 1
+    path: Assets/!CartingSplatoon/Scenes/SampleScene 29.unity
+    guid: 582d6507ea62a4e49a32bc696ecbe481
   m_configObjects: {}

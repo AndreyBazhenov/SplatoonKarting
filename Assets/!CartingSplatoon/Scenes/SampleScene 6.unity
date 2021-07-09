@@ -1011,6 +1011,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a66eb26c8da649f4d9002b04819036f0, type: 3}
+--- !u!114 &331265387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9038853818119012100, guid: a66eb26c8da649f4d9002b04819036f0, type: 3}
+  m_PrefabInstance: {fileID: 331265386}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22e033bf48e62b419a490305410698c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &374224593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3762,7 +3773,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 2023649820}
-  cooldown: -102.15298
+  cooldown: -102.85964
   currentReader:
     requested: 0
     buffer: {fileID: 0}
@@ -4186,8 +4197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 520147681}
   canControll: 0
-  saveController: {fileID: 0}
-  timer: 45
+  saveController: {fileID: 331265387}
+  timer: 105
   needMinimalPlace: 2
   playerColor: {r: 0, g: 1, b: 0, a: 1}
   resultController: {fileID: 819881588}

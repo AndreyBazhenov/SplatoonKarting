@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 473322}
   - component: {fileID: 3344480}
   - component: {fileID: 2321894}
+  - component: {fileID: 9022610458655293563}
   m_Layer: 0
   m_Name: SM_Prop_Crate_02
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9022610458655293563
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 99a7a043437671849abbbc5ed998aae8, type: 3}

@@ -210,7 +210,12 @@ namespace VehicleBehaviour {
             return brushPaint.Color;
         }
 
-        public void SetColor(Mesh mesh, Color color)
+		private void OnCollisionEnter(Collision collision)
+		{
+            AudioController.Instance.PlaySFX("Collision", transform.position);
+        }
+
+		public void SetColor(Mesh mesh, Color color)
         {
             body.GetComponent<MeshFilter>().mesh = mesh;
             body.GetComponent<MeshCollider>().sharedMesh = mesh;
@@ -321,7 +326,7 @@ namespace VehicleBehaviour {
             currentRB.angularVelocity = Vector3.zero;
             currentRB.position = place;
         }
-
+        bool isJump;
         // Update everything
         void FixedUpdate () {
 
@@ -351,11 +356,6 @@ namespace VehicleBehaviour {
                 //drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
                 // Jump
                 jumping = GetInput(jumpInput) != 0;
-
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Respawn();
-                }
             }
             else
             {   
@@ -446,12 +446,21 @@ namespace VehicleBehaviour {
                     wheel.brakeTorque = Mathf.Abs(throttle) * brakeForce;
                 }
             }
-
+            if (!IsGrounded)
+            {
+                isJump = false;
+            }
             // Jump
             if (jumping && isPlayer) {
                 if (!IsGrounded)
+                {
                     return;
-                
+                }
+                if (!isJump)
+                {
+                    AudioController.Instance.PlaySFX("Jump", transform.position);
+                }
+                isJump = true;
                 _rb.velocity += transform.up * jumpVel;
             }
 
