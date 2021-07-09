@@ -116,6 +116,8 @@ public class GiftController : MonoBehaviour
 				Debug.LogError("Empty");
 				break;
 			case 1:
+				roller.Radius = startSize;
+				vehicle.boosting = false;
 				currentRocket.isActivated = true;
 				break;
 			case 2:

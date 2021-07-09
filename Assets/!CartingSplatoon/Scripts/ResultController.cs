@@ -80,7 +80,7 @@ public class ResultController : MonoBehaviour
 
         for (int i = 0; i < raceDatas.Length; i++)
 		{
-            if (needColor == raceDatas[i].color)
+            if (needColor == raceDatas[i].colorPainter.Color)
             {
                 place = i + 1;
             }

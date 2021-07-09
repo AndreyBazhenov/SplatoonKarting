@@ -66,6 +66,7 @@ namespace VehicleBehaviour.Utils {
 			{
 				vehicle.IsPlayer = true;
 				vehicle.Handbrake = false;
+				vehicle.playerName = "You";
 			}
 		}
 

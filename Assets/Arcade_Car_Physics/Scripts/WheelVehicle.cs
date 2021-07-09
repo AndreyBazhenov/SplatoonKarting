@@ -198,6 +198,11 @@ namespace VehicleBehaviour {
         private ParticleSystem paintEffect;
 
         private bool m_isAxisInUse;
+        public TMPro.TextMeshPro txtName;
+        public string playerName;
+        private ResultController resultController;
+
+
         // Init rigidbody, center of mass, wheels and more
 
         public Color GetBrushColor()
@@ -254,6 +259,9 @@ namespace VehicleBehaviour {
             {
                 wheel.motorTorque = 0.0001f;
             }
+
+            playerName = IsPlayer? "You":NVJOBNameGen.GiveAName(1);
+            resultController = FindObjectOfType<ResultController>();
         }
 
         // Visual feedbacks and boost regen
@@ -316,6 +324,8 @@ namespace VehicleBehaviour {
 
         // Update everything
         void FixedUpdate () {
+
+            txtName.text = resultController.GetPlaceByColor(brushPaint.Color)+" : "+playerName;
 
             if (!GameController.Instance.canControll)
             {
