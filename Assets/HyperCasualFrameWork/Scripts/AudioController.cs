@@ -59,6 +59,7 @@ public class AudioController : MonoBehaviour
         {
             audioSource.loop = true;
             audioSource.clip = bgClips[Random.Range(0, bgClips.Length)];
+            audioSource.volume = 0.5f;
             audioSource.Play();
         }
     }

@@ -27863,9 +27863,7 @@ GameObject:
   - component: {fileID: 1575473600}
   - component: {fileID: 1575473609}
   - component: {fileID: 1575473608}
-  - component: {fileID: 1575473607}
   - component: {fileID: 1575473606}
-  - component: {fileID: 1575473605}
   - component: {fileID: 1575473604}
   - component: {fileID: 1575473603}
   - component: {fileID: 1575473602}
@@ -27908,7 +27906,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 1575473603}
-  cooldown: -1697.9397
+  cooldown: -1733.561
   currentReader:
     requested: 0
     buffer: {fileID: 0}
@@ -27970,8 +27968,8 @@ MonoBehaviour:
   stateLimit: 0
   saveLoad: 0
   saveName: 
-  width: 2048
-  height: 2048
+  width: 1024
+  height: 1024
   texture: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
   format: 0
@@ -28007,18 +28005,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   activated: 0
---- !u!114 &1575473605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575473599}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40ed8ad4fc591514692edfe1dbb12e42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1575473606
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28032,18 +28018,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 10, z: 15}
   m_Center: {x: 0, y: -5, z: 0}
---- !u!114 &1575473607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575473599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04cc1b9412eea6e4a8798f4b2f88b4ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1575473608
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37475,7 +37449,7 @@ MonoBehaviour:
   targets:
   - {fileID: 8184004718628756377}
   offset: {x: 0, y: 13, z: -25}
-  lerpPositionMultiplier: 0
+  lerpPositionMultiplier: 4
   lerpRotationMultiplier: 10
   speedometer: {fileID: 0}
 --- !u!1001 &749233600182531903
