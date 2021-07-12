@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public struct Reciepe
 {
@@ -91,6 +92,7 @@ public class GameController : MonoBehaviour
             {
                 AudioController.Instance.PlaySFX("Win");
                 uiController.Win();
+                saveController.SaveTheAchievedLevel();
             }
             else
             {
